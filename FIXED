@@ -124,7 +124,11 @@ def createRooms():
     r2 = Room("Room 2")
     r3 = Room("Room 3")
     r4 = Room("Room 4")
-
+    r5 = Room("Room 5")
+    r6 = Room("Room 6")
+    r7 = Room("Room 7")
+    r8 = Room("Room 8")
+    
     # adds exits to room 1
     r1.addExit("east", r2)
     r1.addExit("south", r3)
@@ -155,11 +159,34 @@ def createRooms():
     r4.addExit ("north", r2)
     r4.addExit ("west", r3)
     r4.addExit ("south", None)      # DEATH!
+    r4.addExit ("up",r8)
     # add grabbables to room 4
     r4.addGrabbable ("6-pack")
     # add items to room 4
     r4.addItem ("brew_rig", "Gourd is brewing some sort of oatmeal stout on the brew rig. A 6-pack is resting beside it.")
 
+    r5.addExit ("south",r7)
+    r5.addExit ("east", r6)
+    r5.addItem ("window", "you look out the window, but its too dark to see anything.")
+    r5.addItem ("chalkboard", " it says Gourd waz here. Interesting.")
+
+    r6.addExit ("south",r8)
+    r6.addExit ("west",r5)
+    r6.addGrabbable ("flashlight")
+    r6.addItem ("desk", "there are stacks of ungraded papers on top. there is a flashlight in a drawer.")
+    r6.addItem ("refrigerator", "there is nothing inside of it.")
+
+    r7.addExit ("north",r5)
+    r7.addGrabbable ("plunger")
+    r7.addItem ("toilet", "it appears to be overflowing. there is a plunger on ground beside it.")
+    r7.addItem ("bathtub", "defintely needs to be cleaned out.")
+    r7.addItem ("mirror", "yes, you still look very attractive.")
+
+    r8.addExit ("down",r4)
+    r8.addExit ("north",r6)
+    r8.addGrabbable ("lightsaber")
+    r8.addItem ("lightsaber_stand", "display says not to touch.")
+    r8.addItem ("tv", "the LSU tigers are playing basketball.")
     # set room 1 as the current room at the beginning of the game
     currentRoom = r1
 
